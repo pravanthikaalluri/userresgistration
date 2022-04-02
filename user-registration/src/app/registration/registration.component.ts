@@ -25,9 +25,9 @@ export class RegistrationComponent implements OnInit {
       bio: ['', [Validators.required]]
     })
   }
-  async submitUserForm() {
+  submitUserForm() {
     if (this.registrationForm.valid) {
-      await this.apiService.getUserRegistration().subscribe(res => {
+      this.apiService.getUserRegistration().subscribe(res => {
         if (res) {
           sessionStorage.setItem('registrationStatus', 'true');
           this.router.navigate(['profile']);
@@ -35,7 +35,7 @@ export class RegistrationComponent implements OnInit {
       })
     }
   }
-  public myError = (controlName: string, errorName: string) => {
+  public formError = (controlName: string, errorName: string) => {
     return this.registrationForm.controls[controlName].hasError(errorName);
   }
 }

@@ -16,8 +16,8 @@ export class ProfileComponent implements OnInit {
     this.getProfileList();
   }
 
-  async getProfileList() {
-    await this.apiService.getUserProfileList().subscribe(res => {
+  getProfileList() {
+    this.apiService.getUserProfileList().subscribe(res => {
       this.userProfile = res as User;
     })
   }
