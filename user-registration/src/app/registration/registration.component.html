@@ -1,1 +1,28 @@
-<p>registration works!</p>
+<!-- <form [formGroup]="registrationForm" (ngSubmit)="submitUserForm()" novalidate> -->
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+        <form class="example-form" [formGroup]="registrationForm" (submit)="submitUserForm()">
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" formControlName="name">
+                    <mat-error *ngIf="myError('name', 'required')">Name is required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" type="email" formControlName="email">
+                    <mat-error *ngIf="myError('email', 'required')">Email is required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Bio</mat-label>
+                    <input matInput placeholder="Bio" formControlName="bio">
+                    <mat-error *ngIf="myError('bio', 'required')">Bio is required</mat-error>
+                </mat-form-field>
+            </mat-card-content>
+            <button mat-stroked-button color="accent" class="btn-block">Register</button>
+        </form>
+    </mat-card>
+</div>
