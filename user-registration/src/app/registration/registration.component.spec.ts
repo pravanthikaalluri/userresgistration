@@ -58,6 +58,7 @@ describe('RegistrationComponent', () => {
     component.registrationForm.controls['name'].setValue("name");
     component.registrationForm.controls['email'].setValue("email");
     component.registrationForm.controls['bio'].setValue("bio");
+    component.registrationForm.controls['password'].setValue("password");
     const mySpy = spyOn(service, 'getUserRegistration').and.returnValue(of({ "success": true }));
     component.submitUserForm();
     expect(mySpy).toHaveBeenCalledTimes(1);

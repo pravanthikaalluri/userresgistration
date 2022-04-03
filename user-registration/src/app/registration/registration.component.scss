@@ -1,0 +1,20 @@
+.mainDiv {
+    margin-top: 50px;
+}
+
+.box:before {
+    background: transparent !important;
+
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.title_center {
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+}
