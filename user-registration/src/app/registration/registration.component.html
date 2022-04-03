@@ -17,6 +17,11 @@
                     <mat-error *ngIf="formError('email', 'required')">Email is required</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" formControlName="password">
+                    <mat-error *ngIf="formError('password', 'required')">Password is required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Bio</mat-label>
                     <input matInput placeholder="Bio" formControlName="bio">
                     <mat-error *ngIf="formError('bio', 'required')">Bio is required</mat-error>
